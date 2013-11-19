@@ -1,0 +1,11 @@
+== linvo-daemon4
+
+socket.io was replaced by JSON-RPC as the communication method for the Linvo API
+and a convenient interface abstraction was created (LinvoAPI object)
+
+This daemon needs to be re-worked to utilize those. To accept incomming requests for controlling
+the system, the daemon would open an API of it's own - a JSON-RPC/TCP interface (+ make sure it's exposed via uPnP/NAT-PMP)
+called the "system API" and would announce the system to the Linvo API.
+
+Also, the remote desktop daemon does not need to be proxied - just expose the ports through uPnP/NAT-PMP
+Include a disabled-by-default SSH functionality in case customer service needs to fix a user's computer.
